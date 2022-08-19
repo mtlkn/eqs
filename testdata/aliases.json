@@ -1,0 +1,12 @@
+{
+    "transform": [
+        [
+            "head:AP",
+            "(headline:AP OR title:AP)"
+        ],
+        [
+            "person:YM",
+            "person.name:YM"
+        ]
+    ]
+}

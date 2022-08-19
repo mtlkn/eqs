@@ -1,0 +1,114 @@
+{
+    "direct": [
+        "a NOT b",
+        "a b",
+        "a OR b",
+        "a AND b",
+        "a NOT b",
+        "a b AND NOT c",
+        "a AND b NOT c",
+        "a AND NOT c AND b",
+        "a AND b c AND d",
+        "a b OR c",
+        "a b OR c d",
+        "a b OR c AND d",
+        "a b OR c OR d",
+        "a AND b c d",
+        "a AND b c AND d",
+        "(a b OR c d) x y z",
+        "a b AND (c OR d) x AND y OR z",
+        "NOT a b",
+        "+a+ -b-",
+        "a b c NOT d AND e",
+        "f:v AND (x y z)",
+        "f:\"a b c\" OR (\"x y z\" AND (a b))",
+        "(\"a(b c)\" OR xyz)",
+        "+a -b c",
+        "\"a b\" AND \"c d\" AND NOT e",        
+        "(a AND b) OR (c AND NOT d)",
+        "NOT (a b)",
+        "a b (c d) NOT (e AND f)",
+        "(a NOT b) AND (c OR d) +e -f",
+        "(f:a) AND (f:b)",
+        "+f:(a b) -f:(a b)",
+        "(f:v AND (f:a OR f:\"a b\"))",
+        "title:AP AND NYT",
+        "title:A\\=P",
+        "title:A\\!P",
+        "((f:\"a\")) AND NOT f:memberfeed",
+        "a \"x y\"",
+        "a +\"x y\"",
+        "a -\"x y\"",
+        "a /+d/",
+        "a +/jon?/",
+        "a -/jon?/",
+        "(new york) AND type:text",
+        "new york AND type:text",
+        "quick~3^2 mediatype:text^5 \"john smith\"^2 title:(foo bar)^4",
+        "quick brown +fox -news",
+        "((quick AND fox) OR (brown AND fox) OR fox) AND NOT news"
+    ],
+    "transform": [
+        [
+            " a  b ",
+            "a b"
+        ],
+        [
+            "title:AP AND *",
+            "title:AP"
+        ],
+        [
+            "title:AP AND ? OR *",
+            "title:AP"
+        ],
+        [
+            "((a:b OR c:d OR (x:y AND z:\"1 2 3\"))) AND *",
+            "((a:b OR c:d OR (x:y AND z:\"1 2 3\")))"
+        ],
+        [
+            "(a AND b)AND NOT c",
+            "(a AND b) AND NOT c"
+        ],
+        [
+            "(a AND b)AND(x OR y)",
+            "(a AND b) AND (x OR y)"
+        ],
+        [
+            "( \\( \\) )",
+            "(\\( \\))"
+        ],
+        [
+            "a * b",
+            "a b"
+        ],
+        [
+            "xyz OR \"a b\" AND \" c  d \"",
+            "xyz OR \"a b\" AND \"c  d\""
+        ]
+    ],
+    "errors": [
+        "a OR",
+        "a AND",
+        "a NOT",
+        "a OR AND b",
+        "a AND OR b",
+        "a NOT NOT b",
+        "a AND NOT NOT b",
+        "NOT NOT a",
+        "a AND b AND",
+        "AND",
+        "OR",
+        "NOT",
+        "a (b",
+        "(a b) (x",
+        "((a b)",
+        "(a)(b)",
+        "a (b OR /c)",
+        "a ) b",
+        "a AND b)",
+        "( a AND b",
+        "a(x y)",
+        "\"john smith\"(john smith)",
+        "(john smith)\"john smith\""
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "direct": [
+        "date:[2022-05-16T14\\:07\\:56Z TO *]",
+        "f:[A TO Z]",
+        "f:{A TO Z]",
+        "f:[A TO Z}",
+        "f:{A TO Z}",
+        "f:[A TO Z]",
+        "f:[A TO Z]^5",
+        "f:[A TO Z]^2.5",
+        "f:[\"donal trump\" TO \"john smith\"]",
+        "date:[2012-01-01 TO 2012-12-31]",
+        "date:[2022-05-16T14\\:07\\:56Z TO *]",
+        "tag:{alpha TO omega}",
+        "count:[10 TO *]",
+        "date:{* TO 2012-01-01}",
+        "count:[1 TO 5}",
+        "f:>A",
+        "f:>=A",
+        "f:<A",
+        "f:<=A",
+        "f:>A^5",
+        "age:>=10^2",
+        "f:>\"john smith\"^2"
+    ],
+    "transform": [
+        [
+            "f:[f:a TO z]",
+            "f:[f\\:a TO z]"
+        ],
+        [
+            "date:[2022-05-16T14:07:56Z TO *]",
+            "date:[2022-05-16T14\\:07\\:56Z TO *]"
+        ],
+        [
+            "date:>2020-06-27T13:12:12",
+            "date:>2020-06-27T13\\:12\\:12"
+        ]
+    ],
+    "errors": [
+        "f:[A TO Z]~1",
+        "f:[A To Z]",
+        "f:[A TO BE Z]",
+        "f:[A TO",
+        "f:>",
+        "f:>(a z)",
+        "f:>\"john smith\"~1",
+        "[a TO z]",
+        "a OR f:[a b]^x",
+        "a f[a TO z]",
+        "a f:[john smith]",
+        "f:[a TO (a z)]",
+        "f:[a f:TO z]",
+        "f:[(\"john smith\"]",
+        "f:[a OR OR smith]",
+        "f:[a b^ c]",
+        "headline:[/joh?n(ath[oa]n)/ TO *]"
+    ]
+}

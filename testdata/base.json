@@ -1,0 +1,70 @@
+{
+    "direct": [
+        "quick brown fox",
+        "title:(quick OR brown)",
+        "status:active",
+        "author:\"Adam Smith\"",
+        "_exists_:title",
+        "qu?ck bro*",
+        "name:/joh?n(ath[oa]n)/",
+        "quikc~ brwn~ foks~",
+        "quikc~1",
+        "\"fox quick\"~5",
+        "count:[1 TO 5]",
+        "date:[2012-01-01 TO 2012-12-31]",
+        "tag:{alpha TO omega}",
+        "count:[10 TO *]",
+        "date:{* TO 2012-01-01}",
+        "count:[1 TO 5}",
+        "age:>10",
+        "age:>=10",
+        "age:<10",
+        "age:<=10",
+        "quick^2 fox",
+        "\"john smith\"^2",
+        "quick brown +fox -news",
+        "((quick AND fox) OR (brown AND fox) OR fox) AND NOT news",
+        "(quick OR brown) AND fox",
+        "status:(active OR pending) title:(full text search)^2",
+        "\\(1\\+1\\)\\=2",
+        "kimchy\\!",
+        "name:john\\ smith",
+        "+(a b)"
+    ],
+    "transform": [
+        [
+            "name:+smith",
+            "name:\\+smith"
+        ],
+        [
+            "f:\"\"",
+            ""
+        ],
+        [
+            "f:\" \\t \"",
+            ""
+        ],
+        [
+            "date:2020-06-27T13:12:12",
+            "date:2020-06-27T13\\:12\\:12"
+        ],
+        [
+            "+*",
+            ""
+        ],
+        [
+            "+* AND f:v",
+            "f:v"
+        ]
+    ],
+    "errors": [
+        "age:>26~",
+        "age:[26 TO *]~3",
+        "age:[a z]",
+        "age:[NOT a TO z]",
+        "age:[a TO AND z]",
+        "name:>a\"john smith\"",
+        "\"john smith\"xyz",
+        "\" \\\t \""
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "direct": [
+        "f:(a OR b)",
+        "f:(a AND b)",
+        "f:(a b)",
+        "f:(a NOT b)",
+        "f:(a AND NOT b)",
+        "f:(+a -b) AND t:(a OR b)",
+        "(f:(+a -b) AND t:(a OR b)) NOT headline:AP",
+        "slug:(apnewsalert OR \"ap newsalert\")",
+        "slug:(apnewsalert AND \"ap newsalert\")",
+        "slug:(\"ap newsalert\" OR \"ap news alert\")",
+        "f:(+\"john smith\"~1^5 OR /jose?/^3)",
+        "title:(quick OR brown)",
+        "book.\\*:(quick OR brown)",
+        "+(a b)",
+        "+(a b) -(c d)"
+    ],
+    "transform": [
+        [
+            "f:(* ? ap)",
+            "f:(ap)"
+        ],
+        [
+            "f:(&& OR b)",
+            "f:(\\&\\& OR b)"
+        ],
+        [
+            "f:(|| OR b)",
+            "f:(\\|\\| OR b)"
+        ]
+    ],
+    "errors": [
+        "f:(a",
+        "f:a)",
+        "a:(b c)^x",
+        "f:(a b)x",
+        "+:(a b)",
+        "-:(a b)",
+        "f:(\"a b\"\"x y\" OR c)",
+        "f:((a b) OR C)",
+        "f:(x\"a b\" OR c)",
+        "f:()",
+        "f(*)",
+        "f:(f:a OR b)",
+        "a (f: b)",
+        "f:(f:/john?/)",
+        "f:(\"a\"a\"a\"a)",
+        "f:(a OR OR b)"
+    ]
+}

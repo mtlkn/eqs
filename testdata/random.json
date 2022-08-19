@@ -1,0 +1,91 @@
+{
+    "direct": [
+        "\"super bowl\" AND 2021",
+        "f:v*",
+        "status:active",
+        "+f:v~^5",
+        "+f:v~1^2.5",
+        "author:\"John Smith\"",
+        "_exists_:title",
+        "qu?ck bro*",
+        "name:/joh?n(ath[oa]n)/",
+        "name:/joh?n(ath[oa]n)/^5",
+        "quikc~1 brwn~ foks~",
+        "\"fox quick\"~5",
+        "sum:\\(1\\+1\\)\\=2",
+        "f:\\(\\[\\{\\/\\\"",
+        "\"AP\" \"A\" AND \"P\"",
+        "f:\"AP\"",
+        "a:b-"
+    ],
+    "transform": [
+        [
+            "f:*",
+            "_exists_:f"
+        ],
+        [
+            "f:A&P",
+            "f:A\\&P"
+        ],
+        [
+            "arrivaldatetime:2022-05-16T14:07:56Z",
+            "arrivaldatetime:2022-05-16T14\\:07\\:56Z"
+        ],
+        [
+            "title:A&&P",
+            "title:A\\&\\&P"
+        ],
+        [
+            "title:A||P",
+            "title:A\\|\\|P"
+        ],
+        [
+            "title:A=P",
+            "title:A\\=P"
+        ],
+        [
+            "title:A!P",
+            "title:A\\!P"
+        ],        
+        [
+            "title:A&P",
+            "title:A\\&P"
+        ],
+        [
+            "title:A|P",
+            "title:A\\|P"
+        ],
+        [
+            "(a b)NOT(x y)OR\"john smith\"AND(1 2)",
+            "(a b) NOT (x y) OR \"john smith\" AND (1 2)"
+        ]
+    ],
+    "errors": [
+        "f: AND AP",
+        "quikc~0.5 brwn~ foks~",
+        "a:/d",
+        "a:/d+/^x",
+        "a\"x y\"",
+        "f:\"a b\"~1^",
+        "f:\"a b\"~1^2^5",
+        "f:\"a",
+        "f:[a TO b",
+        "~",
+        "^5",
+        "f:/a[?]",
+        "f:/a[\\d+]/^x",
+        "f:\"a b\"^5(x y)",
+        "\"a\"\"b\"",
+        "f:a AND f:",
+        "f:v OR f:/a",
+        "f:v^2~",
+        "+",
+        "f:>=",
+        "f:*john",
+        "f:a(x y z)",
+        "\"john smith\"~",
+        "\"john smith\"x",
+        "f:(a: b)",
+        "(f:(\"puerto rico\" martinique)) OR place:NY)"
+    ]
+}
